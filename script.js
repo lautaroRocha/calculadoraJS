@@ -54,6 +54,7 @@ const numeroAnterior = document.querySelector('[data-viejo]');
 const numeroNuevo = document.querySelector('[data-nuevo]');
 
 
+
 const calculadora = new Calculator(numeroAnterior, numeroNuevo);
 
 operadorBoton.forEach(button => {
@@ -67,7 +68,6 @@ operadorBoton.forEach(button => {
 
 numeroBoton.forEach  (button =>{
     button.addEventListener('click', () => {
-        calculadora.numeroNuevo.textContent="";
         calculadora.appendNumber(button.textContent);
     })
 })
