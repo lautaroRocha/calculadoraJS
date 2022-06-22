@@ -8,7 +8,7 @@ class Calculator {
             this.numeroNuevo.innerText = "";
             this.operation = undefined;
         }
-        appendNumber(numero){
+        agregarNum(numero){
           this.numeroNuevo.innerText = this.numeroNuevo.innerText + numero.toString();
         }
         elegirOperacion(operation){
@@ -49,26 +49,30 @@ const numeroBoton = document.querySelectorAll('[data-number]');
 const operadorBoton = document.querySelectorAll('[data-operation]');
 const igualBoton = document.querySelector('[data-equal]')
 const borrarBoton = document.querySelector('#borrar')
+
+
 const pantalla = document.querySelector('.display')
 const numeroAnterior = document.querySelector('[data-viejo]');
 const numeroNuevo = document.querySelector('[data-nuevo]');
 
-
+const botonModo = document.querySelector(".mode");
+const body = document.querySelector("html");
 
 const calculadora = new Calculator(numeroAnterior, numeroNuevo);
 
+
+
 operadorBoton.forEach(button => {
     button.addEventListener('click', ()=>{
-        calculadora.appendNumber(button.innerText);
+        calculadora.agregarNum(button.innerText);
         calculadora.elegirOperacion(button.innerText);
         calculadora.updateDisplay();
     })
 })
 
-
 numeroBoton.forEach  (button =>{
     button.addEventListener('click', () => {
-        calculadora.appendNumber(button.textContent);
+        calculadora.agregarNum(button.textContent);
     })
 })
 
@@ -78,4 +82,14 @@ borrarBoton.addEventListener('click', () =>{
 
 igualBoton.addEventListener('click', ()=>{
     calculadora.calcular();
+});
+
+botonModo.addEventListener('click', function(){
+    let modo = body.getAttribute('class');
+    if (modo == "light"){
+        body.setAttribute('class', 'dark')
+    }else {
+        body.setAttribute('class', 'light')
+    }
+
 });
