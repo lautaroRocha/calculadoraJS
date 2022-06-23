@@ -1,14 +1,30 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
 html{
     height: 100%;
     width: 100%;
     display: grid;
-    place-content: center;
-}
+    place-content: center;}
+.firma{
+    position: relative;
+    left: 190px;
+    color: var(--color-operador);
+    font-weight: bolder;}
+.firma>a{
+    color: var(--color-texto);
+    filter: brightness(130%);
+    text-decoration: none;}
+.mode {
+    fill: var(--color-operador);
+    width: 50px;
+    position: relative;
+    right: 50px;
+    top: 50px;}
+.mode:hover{
+    cursor: pointer;
+    filter:brightness(125%)}
 .light{
     --color-numero: #2EC1AC;
     --color-igual:#3E978B;
@@ -17,19 +33,7 @@ html{
     --color-texto:#000;
     background: rgb(46,193,172);
     background: linear-gradient(325deg, rgba(239,244,142,1) 29%, rgba(250,252,208,1) 56%);
-    background-repeat: no-repeat;
-}
-.mode {
-    fill: var(--color-operador);
-    width: 50px;
-    position: relative;
-    right: 50px;
-    top: 50px;
-}
-.mode:hover{
-    cursor: pointer;
-    filter:brightness(125%)
-}
+    background-repeat: no-repeat;}
 .dark{
     --color-numero: #3B185F;
     --color-igual:#2A0944;
@@ -37,8 +41,7 @@ html{
     --color-operador: #f8a011;
     background: rgb(0,0,0);
     background: linear-gradient(332deg, rgba(0,0,0,1) 32%, rgba(41,41,41,1) 58%, rgba(70,70,70,1) 76%);
-    --color-texto:#eee;
-}
+    --color-texto:#ddd;}
 .calculadora {
     margin: 5vh auto;
     width: 70vw;
@@ -49,8 +52,7 @@ html{
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap:10px;
-    color: var(--color-texto);
-}
+    color: var(--color-texto);}
 .glass {
     font-size: clamp(1rem, 5vw, 2.5rem);
     font-weight: bolder;
@@ -59,8 +61,7 @@ html{
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4.5px );
     -webkit-backdrop-filter: blur( 4.5px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-}
+    border: 1px solid rgba( 255, 255, 255, 0.18 );}
 .display {
     background-color: var(--color-pantalla);
     grid-column: 1/4;
@@ -70,35 +71,31 @@ html{
     padding-right: 15px;
     align-items: end;
     height: 6rem;
-    font-size:clamp(1rem, 5vw, 2rem);
-}
+    font-size:clamp(1rem, 5vw, 2rem);}
 .display>div{
-    margin-right: 1rem;
-}
+    margin-right: 1rem;}
 .boton{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--color-texto);
-}
+    color: var(--color-texto);}
     .boton:hover{
         cursor: pointer;
-        filter: brightness(125%);
-    }
+        filter: brightness(125%);}
     .boton:active{
         transform: translate(-1px, 1px);
         box-shadow: -3px 3px 5px #ccc;
-        filter: brightness(85%);
-    }
+        filter: brightness(85%);}
 .ult-num {
     font-size: 15px;
-    background-color: var(--color-pantalla);
-}
+    background-color: var(--color-pantalla);}
+.nue-num{
+    max-width: 200px;
+    overflow: hidden;}
 .clear {
     background-color: var(--color-igual);
     grid-column:4;
-    grid-row:1;
-}
+    grid-row:1;}
 .uno {
     background-color: var(--color-numero);
     grid-column:1;
