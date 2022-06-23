@@ -6,13 +6,16 @@ html{
     height: 100%;
     width: 100%;
     display: grid;
-    place-content: center;}
+    place-content: center;
+    overflow: hidden;}
 .firma{
-    position: relative;
-    left: 190px;
+    margin-left: 1.5rem;
+    width: 150px;
     color: var(--color-operador);
-    font-weight: bolder;}
-.firma>a{
+    font-weight: bolder;
+    text-align: left;
+}
+.firma>p>a{
     color: var(--color-texto);
     filter: brightness(130%);
     text-decoration: none;}
@@ -20,7 +23,7 @@ html{
     fill: var(--color-operador);
     width: 50px;
     position: relative;
-    right: 50px;
+    right: 30px;
     top: 50px;}
 .mode:hover{
     cursor: pointer;
